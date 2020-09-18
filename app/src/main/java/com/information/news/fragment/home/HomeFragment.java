@@ -35,6 +35,7 @@ public class HomeFragment extends Fragment {
             News news = new News();
             news.setTitle("测试" + i);
             news.setOpenUrl("http://www.baidu.com");
+            news.setImageUrl("https://tojoycloud-app-online.oss-cn-beijing.aliyuncs.com//tojoy/tojoyClould/busOpportunity/202009/11/image/94a762ed497fb14fc13362d1ac4116011599806100954whRatio=0.75.png");
             list.add(news);
         }
 
