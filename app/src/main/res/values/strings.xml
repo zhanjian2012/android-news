@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">新闻直播间</string>
+    <string name="title_home">首页</string>
+    <string name="title_nav_today_news">今日要闻</string>
+    <string name="title_user">用户</string>
+</resources>
