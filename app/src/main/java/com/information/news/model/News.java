@@ -4,9 +4,9 @@ public class News {
 
     private String title;
 
-    private String imageUrl;
+    private String image_url;
 
-    private String openUrl;
+    private String open_url;
 
     public String getTitle() {
         return title;
@@ -16,19 +16,19 @@ public class News {
         this.title = title;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 
-    public String getOpenUrl() {
-        return openUrl;
+    public String getOpen_url() {
+        return open_url;
     }
 
-    public void setOpenUrl(String openUrl) {
-        this.openUrl = openUrl;
+    public void setOpen_url(String open_url) {
+        this.open_url = open_url;
     }
 }

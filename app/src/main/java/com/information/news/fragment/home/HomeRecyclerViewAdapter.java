@@ -38,11 +38,9 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.news = newsList.get(position);
-        holder.newsImage.setImageBitmap(ImageUtils.getHttpBitmap(newsList.get(position).getImageUrl()));
         holder.newsTitle.setText(newsList.get(position).getTitle());
-//        Picasso.with(mContext).load(new File(filePath)).centerCrop().resize(OtherUtils.dip2px(mContext,120),OtherUtils.dip2px(mContext,120))
-//                .error(R.mipmap.pictures_no).into(holder.mIvDisPlayItemPhoto);
-        Picasso.get().load(newsList.get(position).getImageUrl()).into(holder.newsImage);
+        System.err.println("http:" + newsList.get(position).getImage_url());
+        Picasso.get().load("http:" + newsList.get(position).getImage_url()).into(holder.newsImage);
     }
 
     @Override
