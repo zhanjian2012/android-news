@@ -1,6 +1,8 @@
 package com.information.news.util;
 
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.information.news.core.Result;
 import com.information.news.model.News;
@@ -9,6 +11,7 @@ import com.information.news.service.NewsService;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -49,7 +52,7 @@ public class HttpUtils {
         NewsService service = retrofit.create(NewsService.class);
         Call<Result<List<News>>> call = service.result();
         // 不同的是如果是Android系统回调方法执行在主线程
-
+        Log.i("TEST", call.toString());
         return call;
     }
 

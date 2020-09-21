@@ -1,5 +1,8 @@
 package com.information.news.fragment.home;
 
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +41,14 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.news = newsList.get(position);
-        holder.newsTitle.setText(newsList.get(position).getTitle());
+//        holder.newsTitle.setText(newsList.get(position).getTitle());
+        String imgUrl = "https://tojoycloud-app-online.oss-cn-beijing.aliyuncs.com//tojoy/tojoyClould/busOpportunity/202009/11/image/94a762ed497fb14fc13362d1ac4116011599806100954whRatio=0.75.png";
         System.err.println("http:" + newsList.get(position).getImage_url());
-        Picasso.get().load("http:" + newsList.get(position).getImage_url()).into(holder.newsImage);
+        Picasso.get().load(imgUrl).into(holder.newsImage);
+
+        String htmlhref = "<a href='"+newsList.get(position).getOpen_url()+"'>"+newsList.get(position).getTitle()+"</a>";
+        holder.newsTitle.setText(Html.fromHtml(htmlhref));
+        holder.newsTitle.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     @Override
