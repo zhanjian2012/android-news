@@ -2,7 +2,6 @@ package com.information.news.fragment.home;
 
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +10,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.information.news.R;
 import com.information.news.model.News;
-import com.information.news.util.ImageUtils;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -45,8 +42,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         String imgUrl = "https://tojoycloud-app-online.oss-cn-beijing.aliyuncs.com//tojoy/tojoyClould/busOpportunity/202009/11/image/94a762ed497fb14fc13362d1ac4116011599806100954whRatio=0.75.png";
         System.err.println("http:" + newsList.get(position).getImage_url());
         Picasso.get().load(imgUrl).into(holder.newsImage);
-
-        String htmlhref = "<a href='"+newsList.get(position).getOpen_url()+"'>"+newsList.get(position).getTitle()+"</a>";
+        String htmlhref = "<a href='" + newsList.get(position).getOpen_url() + "'>" + newsList.get(position).getTitle() + "</a>";
         holder.newsTitle.setText(Html.fromHtml(htmlhref));
         holder.newsTitle.setMovementMethod(LinkMovementMethod.getInstance());
     }
